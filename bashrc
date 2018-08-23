@@ -8,17 +8,23 @@ export GOPATH="$HOME/Documents/GoWorkspace"
 export PATH="/Users/i335693/Documents/GoWorkspace/bin:$PATH"
 export PATH="/anaconda3/bin:$PATH"
 
+
 # Git aliases
-alias gis="git status"
-alias giff="git diff"
-alias gitlogs="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+alias gs="git status"
+alias ga="git add"
+alias gm="git commit"
+alias up="git push"
+alias down="git pull"
+alias goto="git checkout $1"
+alias gf="git diff"
+alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gira="git reset HEAD --hard"
 
 # Docker aliases
 alias d="docker"
-alias dloc="eval $(docker-machine env default)"
-alias dk8s="eval $(minikube docker-env)"
-alias dpsql="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
+alias dl="eval $(docker-machine env default)"
+alias dk="eval $(minikube docker-env)"
+alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
 
 # Kubectl and Minikube aliases
 alias k="kubectl"
