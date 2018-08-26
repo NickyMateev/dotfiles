@@ -9,8 +9,11 @@ export PATH="/Users/i335693/Documents/GoWorkspace/bin:$PATH"
 export PATH="/anaconda3/bin:$PATH"
 export GITPATH="$HOME/Documents/GitHub/NickyMateev"
 
+# Vim aliases
+alias v="vim"
 
 # Git aliases
+alias gc="git clone"
 alias gs="git status"
 alias ga="git add"
 alias gm="git commit"
@@ -32,11 +35,13 @@ alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWOR
 # Kubectl and Minikube aliases
 alias k="kubectl"
 alias m="minikube"
+alias md="minikube dashboard"
 
 # Tmux aliases
 alias tns="tmux new -s"
 alias tas="tmux attach -t"
 alias tls="tmux list-sessions"
+alias tpn="printf '\033]2;%s\033\\' '$1'" 
 
 # Port function which tells whether a port is used or not. Usage: port 8080
 port() {
