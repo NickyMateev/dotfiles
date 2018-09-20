@@ -1,4 +1,4 @@
-# PATH variables
+# PATH variables:
 export PATH="/Users/i335693/mvn/apache-maven-3.5.0/bin:$PATH"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
 export PATH="/usr/local/share/python:$PATH"
@@ -9,22 +9,23 @@ export PATH="/Users/i335693/Documents/GoWorkspace/bin:$PATH"
 export PATH="/anaconda3/bin:$PATH"
 export GITPATH="$HOME/Documents/GitHub/NickyMateev"
 
-# Vim aliases
+# Vim aliases:
 alias v="vim"
 
-# Git aliases
+# Git aliases:
 alias gc="git clone"
 alias gs="git status"
 alias ga="git add"
 alias gm="git commit"
 alias up="git push"
+alias upp="git push --set-upstream origin"
 alias down="git pull"
 alias goto="git checkout $1"
 alias gf="git diff"
 alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gira="git reset HEAD --hard"
 
-# Docker aliases
+# Docker aliases:
 alias d="docker"
 alias di="docker images"
 alias dp="docker ps"
@@ -32,14 +33,14 @@ alias dl="eval $(docker-machine env default)"
 alias dk="eval $(minikube docker-env)"
 alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
 
-# Kubectl and Minikube aliases
+# Kubectl and Minikube aliases:
 alias k="kubectl"
 alias m="minikube"
 alias md="minikube dashboard"
 
-# Tmux aliases
+# Tmux aliases:
 alias tns="tmux new -s"
-alias tas="tmux attach -t"
+alias ts="tmux attach -t"
 alias tls="tmux list-sessions"
 alias tpn="printf '\033]2;%s\033\\' '$1'" 
 
@@ -48,7 +49,7 @@ port() {
   lsof -i ":$1"
 }
 
-# .bash_profile aliases
+# .bash_profile aliases:
 alias les="less ~/.bash_profile"
 eles() {
   vim ~/.bash_profile
@@ -57,5 +58,8 @@ eles() {
   . ~/.bashrc
 }
 
-# Inject docker environment variables
+# Inject docker environment variables:
 eval $(docker-machine env default)
+
+# Enable i-search:
+stty -ixon
