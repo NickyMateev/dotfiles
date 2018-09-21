@@ -1,18 +1,41 @@
-# PATH variables:
-export PATH="/Users/i335693/mvn/apache-maven-3.5.0/bin:$PATH"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(
+  git
+  docker
+)
+
+# Ignore these permission issues and load the completion system normally:
+ZSH_DISABLE_COMPFIX=true
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration:
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/mvn/apache-maven-3.5.0/bin:$PATH
 export PATH="/usr/local/share/python:$PATH"
-export PATH="/Users/i335693/Applications\ &\ Services/diff-so-fancy:$PATH"
+export PATH="$HOME/Applications\ &\ Services/diff-so-fancy:$PATH"
 export PATH="~/sm-cli/:$PATH"
-export GOPATH="$HOME/Documents/GoWorkspace"
-export PATH="/Users/i335693/Documents/GoWorkspace/bin:$PATH"
+export PATH="$HOME/Documents/GoWorkspace/bin:$PATH"
 export PATH="/anaconda3/bin:$PATH"
+
 export GITPATH="$HOME/Documents/GitHub/NickyMateev"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+export GOPATH="$HOME/Documents/GoWorkspace"
 
-# Vim aliases:
-alias v="vim"
+# Aliases:
 
-# Git aliases:
+# Edit zsh config, add to the dotfiles repo the newest config version and finally run it:
+zshconfig() {
+  vim ~/.zshrc
+  cp ~/.zshrc $GITPATH/dotfiles/zshrc
+  . ~/.zshrc
+}
+
+ # Git aliases:
 alias gc="git clone"
 alias gs="git status"
 alias ga="git add"
@@ -49,17 +72,5 @@ port() {
   lsof -i ":$1"
 }
 
-# .bash_profile aliases:
-alias les="less ~/.bash_profile"
-eles() {
-  vim ~/.bash_profile
-  cp ~/.bash_profile ~/.bashrc
-  cp ~/.bash_profile $GITPATH/dotfiles/bashrc
-  . ~/.bashrc
-}
-
 # Inject docker environment variables:
 eval $(docker-machine env default)
-
-# Enable i-search:
-stty -ixon
