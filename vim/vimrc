@@ -217,9 +217,6 @@ set relativenumber " Show relative line numbers
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-
-execute pathogen#infect()
-
 " Vundle "
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -238,7 +235,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'derekwyatt/vim-scala'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'terryma/vim-expand-region'
@@ -246,9 +242,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'kana/vim-textobj-user'
-Plugin 'bps/vim-textobj-python'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
