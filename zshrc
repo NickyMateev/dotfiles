@@ -47,8 +47,8 @@ alias gira="git reset HEAD --hard"
 
 # Docker aliases:
 alias d="docker"
-alias di="docker images"
-alias dp="docker ps"
+alias di="docker image"
+alias dc="docker container"
 alias dl="eval $(docker-machine env default)"
 alias dk="eval $(minikube docker-env)"
 alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
