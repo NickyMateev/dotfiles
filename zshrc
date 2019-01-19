@@ -27,7 +27,7 @@ export GOPATH="$HOME/go"
 # Edit zsh config, add to the dotfiles repo the newest config version and finally run it:
 zshconfig() {
   vim ~/.zshrc
-  cp ~/.zshrc $GITPATH/dotfiles/zshrc
+  cp ~/.zshrc $GITPATH/NickyMateev/dotfiles/zshrc
   . ~/.zshrc
 }
 
@@ -52,6 +52,9 @@ alias dc="docker container"
 alias dl="eval $(docker-machine env default)"
 alias dk="eval $(minikube docker-env)"
 alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
+
+# Connect to local/docker postgres
+alias dp="psql -h localhost -U postgres"
 
 # Kubectl and Minikube aliases:
 alias k="kubectl"
