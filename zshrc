@@ -16,6 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/mvn/apache-maven-3.5.0/bin:$PATH
+export PATH=$HOME/scripts:$PATH
 export PATH=$HOME/svcat:$HOME/smctl:$PATH
 export PATH="$HOME/go/bin:$PATH"
 
@@ -53,6 +54,7 @@ alias dc="docker container"
 alias dl="eval $(docker-machine env default)"
 alias dk="eval $(minikube docker-env)"
 alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
+alias dpsr="dc stop postgres-docker; dc rm postgres-docker; dps"
 
 # Connect to local/docker postgres
 alias dp="psql -h localhost -U postgres"
