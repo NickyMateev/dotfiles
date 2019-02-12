@@ -53,8 +53,18 @@ alias di="docker image"
 alias dc="docker container"
 alias dl="eval $(docker-machine env default)"
 alias dk="eval $(minikube docker-env)"
-alias dps="docker run --name postgres-docker -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres"
-alias dpsr="dc stop postgres-docker; dc rm postgres-docker; dps"
+
+db() {
+  if [ $1 = '-d' ]; then
+    dc stop $2; dc rm $2
+  else
+    docker run --name $1 -d -p $2:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres
+  fi
+}
+
+dbr() {
+  dc stop $1; dc rm $1; dps $1 $2
+}
 
 # Connect to local/docker postgres
 alias dp="psql -h localhost -U postgres"
