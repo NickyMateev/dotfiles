@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# This script cleans up the first retrieved visibilities record
+
+visibility_id=$(smctl curl /v1/visibilities | jq -r '.visibilities[0].id')
+
+smctl curl -X DELETE /v1/visibilities/$visibility_id > /dev/null 2>&1

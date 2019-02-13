@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+cf dev start
+
+cf login -a https://api.dev.cfdev.sh --skip-ssl-validation -u admin -p admin -o cfdev-org
+
+# Configure proxy manifest
+
+manifestPath=$GOPATH/src/github.com/Peripli/service-broker-proxy-cf/manifest.yml
+
+smctl login --auth-flow client-credentials --client-id sm_admin --client-secret sm_admin --url http://localhost:8085
+
+# cleanup
+smctl delete-platform cf-eu50-local
+
+credentials=$(smctl register-platform cf-eu50-local cloudfoundry -o json | jq '.credentials.basic')
+
+username=$(echo $credentials | jq '.username' | tr -d '"')
+password=$(echo $credentials | jq '.password' | tr -d '"')
+
+sed -i 's@SM_URL.*@SM_URL: http:\/\/10.0.2.2:8085@' $manifestPath
+sed -i 's@SM_USER.*@SM_USER: '"$username"'@' $manifestPath
+sed -i 's@SM_PASSWORD.*@SM_PASSWORD: '"$password"'@' $manifestPath
+sed -i 's@SM_SKIP_SSL_VALIDATION.*@SM_SKIP_SSL_VALIDATION: true@' $manifestPath
+sed -i 's@CF_CLIENT_SKIPSSLVALIDATION.*@CF_CLIENT_SKIPSSLVALIDATION: true@' $manifestPath
+sed -i 's@LOG_LEVEL.*@LOG_LEVEL: debug@' $manifestPath
+
+cf push -f $manifestPath --no-start
+cf set-env cfproxy SM_RESYNC_PERIOD 15s
+cf start cfproxy

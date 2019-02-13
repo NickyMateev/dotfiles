@@ -1,0 +1,50 @@
+#!/bin/zsh
+
+isClusterRunning=$(minikube status | grep -c "Running")
+
+if [ $isClusterRunning = 0 ]; then
+  minikube start --extra-config=apiserver.authorization-mode=RBAC --vm-driver=hyperkit
+fi
+
+helm init --wait
+
+kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
+
+helm repo add svc-cat https://svc-catalog-charts.storage.googleapis.com
+helm search service-catalog
+
+kubectl create clusterrolebinding tiller-cluster-admin  --clusterrole=cluster-admin --serviceaccount=kube-system:default
+kubectl -n kube-system patch deployment tiller-deploy -p '{"spec": {"template": {"spec": {"automountServiceAccountToken": true}}}}'
+
+helm install svc-cat/catalog  --name catalog --namespace catalog --wait
+
+valuesPath=$GOPATH/src/github.com/Peripli/service-broker-proxy-k8s/charts/service-broker-proxy-k8s/values.yaml
+
+smctl login --auth-flow client-credentials --client-id sm_admin --client-secret sm_admin --url http://localhost:8085
+
+# cleanup
+smctl delete-platform k8s-eu50-local
+
+credentials=$(smctl register-platform k8s-eu50-local kubernetes -o json | jq '.credentials.basic')
+
+# workaround due to sed's inability to change delimeters when substiting the user and password values
+slashes=$(echo $credentials | grep -c "/")
+
+while [ $slashes -gt 0 ]
+do
+  smctl delete-platform k8s-eu50-local
+  credentials=$(smctl register-platform k8s-eu50-local kubernetes -o json | jq '.credentials.basic')
+  slashes=$(echo $credentials | grep -c "/")
+done
+
+username=$(echo $credentials | jq '.username' | tr -d '"')
+password=$(echo $credentials | jq '.password' | tr -d '"')
+
+sed -i 's@url.*@url: http:\/\/10.0.2.2:8085@' $valuesPath
+sed -i -e '/user.*/{s//user: '"$username"'/;:a' -e '$!N;$!ba' -e '}' $valuesPath
+sed -i -e '/password.*/{s//password: '"$password"'/;:a' -e '$!N;$!ba' -e '}' $valuesPath
+sed -i 's@skip_ssl_validation.*@skip_ssl_validation: true@' $valuesPath
+sed -i 's@resync_period.*@resync_period: 15s@' $valuesPath
+sed -i 's@level.*@level: debug@' $valuesPath
+
+helm install $GOPATH/src/github.com/Peripli/service-broker-proxy-k8s/charts/service-broker-proxy-k8s --name service-broker-proxy --namespace service-broker-proxy --wait

@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# This script creates a visibility record in the Service Manager for the first plan that's fetched 
+# from the DB and the currently logged in Cloud Foundry organization
+
+platform_id=$(smctl curl /v1/platforms | jq '.platforms[] | select(.type == "cloudfoundry").id')
+plan_id=$(smctl curl /v1/service_plans | jq -r '.service_plans[0].id')
+org_guid=$(cf org cfdev-org --guid)
+
+visibility_payload='{
+    "platform_id": '$platform_id',
+    "service_plan_id": "'$plan_id'",
+    "labels": {
+        "organization_guid": ["'$org_guid'"]
+      }
+  }'
+
+smctl curl /v1/visibilities -X POST -d $visibility_payload > /dev/null 2>&1

@@ -63,7 +63,7 @@ db() {
 }
 
 dbr() {
-  dc stop $1; dc rm $1; dps $1 $2
+  dc stop $1; dc rm $1; db $1 $2
 }
 
 # Connect to local/docker postgres
@@ -87,3 +87,6 @@ port() {
 
 # Inject docker environment variables:
 eval $(docker-machine env default)
+
+# Set loopback address alias
+ifconfig lo0 alias 10.0.2.2
