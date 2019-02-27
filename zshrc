@@ -36,6 +36,8 @@ zshconfig() {
 # Git aliases:
 alias gc="git clone"
 alias gs="git status"
+alias gsh="git stash"
+alias gsa="git stash apply"
 alias ga="git add"
 alias gm="git commit"
 alias gam="git commit -a -m"
@@ -88,5 +90,5 @@ port() {
 # Inject docker environment variables:
 eval $(docker-machine env default)
 
-# Set loopback address alias
-ifconfig lo0 alias 10.0.2.2
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
