@@ -5,6 +5,9 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   docker
+  vi-mode
+  copyfile
+  web-search
 )
 
 # Ignore these permission issues and load the completion system normally:
@@ -44,10 +47,17 @@ alias gam="git commit -a -m"
 alias up="git push"
 alias upp="git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
 alias down="git pull"
-alias goto="git checkout $1"
 alias gf="git diff"
 alias gl="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gira="git reset HEAD --hard"
+
+# Checkout to git branch, create one if it doesn't exist:
+goto() {
+  git checkout $1
+  if [ $? -ne 0 ]; then 
+    git checkout -b $1
+  fi
+}
 
 # Docker aliases:
 alias d="docker"
