@@ -36,6 +36,8 @@ zshconfig() {
   . ~/.zshrc
 }
 
+alias todo="open https://todoist.com/"
+
 # Git aliases:
 alias gc="git clone"
 alias gs="git status"
