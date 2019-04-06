@@ -37,6 +37,7 @@ zshconfig() {
 }
 
 alias todo="open https://todoist.com/"
+alias poc="open https://getpocket.com/"
 
 # Git aliases:
 alias gc="git clone"
