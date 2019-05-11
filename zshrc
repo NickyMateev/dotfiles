@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(
+  autojump
   git
   docker
   vi-mode
@@ -94,6 +95,9 @@ alias tns="tmux new -s"
 alias ts="tmux attach -t"
 alias tls="tmux list-sessions"
 alias tpn="printf '\033]2;%s\033\\' '$1'"
+
+# Golang remove vendor:
+alias rmv="rm -rf vendor/ Gopkg.lock"
 
 # Port function which tells whether a port is used or not. Usage: port 8080
 port() {
