@@ -21,7 +21,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/mvn/apache-maven-3.5.0/bin:$PATH
 export PATH=$HOME/scripts:$GITPATH/NickyMateev/dotfiles/scripts:$PATH
-export PATH=$HOME/svcat:$HOME/smctl:$PATH
 export PATH="$HOME/go/bin:$PATH"
 
 export GITPATH="$HOME/Documents/GitHub"
