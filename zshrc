@@ -36,6 +36,8 @@ zshconfig() {
   . ~/.zshrc
 }
 
+alias :q="exit"
+
 alias todo="open https://todoist.com/"
 alias poc="open https://getpocket.com/"
 
