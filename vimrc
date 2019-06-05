@@ -4,6 +4,21 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Map leader key to ','
+let mapleader=","
+
+" Move lines around using the leader key + j,k
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv"
+
+" Autoclose parentheses, brackets and quotes
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+
 " Enable use of the mouse for all modes
 set mouse=a
 
@@ -26,3 +41,6 @@ set hidden
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+
+" Show current command in the bottom right corner when typed
+set showcmd
