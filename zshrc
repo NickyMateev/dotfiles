@@ -83,6 +83,9 @@ dbr() {
   dc stop $1; dc rm $1; db $1 $2
 }
 
+# Open current Git repo in browser
+alias gh="open $(git config remote.origin.url)"
+
 # Connect to local/docker postgres
 alias dp="psql -h localhost -U postgres"
 
@@ -110,3 +113,6 @@ eval $(docker-machine env default)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
