@@ -67,6 +67,8 @@ goto() {
   fi
 }
 
+alias master="goto master"
+
 # Docker aliases:
 alias d="docker"
 alias di="docker image"
