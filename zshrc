@@ -22,6 +22,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/mvn/apache-maven-3.5.0/bin:$PATH
 export PATH=$HOME/scripts:$GITPATH/NickyMateev/dotfiles/scripts:$PATH
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.ghcup/env:$PATH"
 
 export GITPATH="$HOME/Documents/GitHub"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
@@ -39,7 +40,9 @@ zshconfig() {
 alias :q="exit"
 
 alias todo="open https://todoist.com/"
+alias tog="open https://toggl.com/app/timer"
 alias poc="open https://getpocket.com/"
+alias mfp="open https://www.myfitnesspal.com/"
 
 # Git aliases:
 alias gc="git clone"
@@ -84,7 +87,7 @@ dbr() {
 }
 
 # Open current Git repo in browser
-alias gh="open $(git config remote.origin.url)"
+alias gh="open $(git config remote.origin.url)/tree/$(git branch | grep \* | cut -d ' ' -f2)"
 
 # Connect to local/docker postgres
 alias dp="psql -h localhost -U postgres"
@@ -102,6 +105,9 @@ alias tpn="printf '\033]2;%s\033\\' '$1'"
 
 # Golang remove vendor:
 alias rmv="rm -rf vendor/ Gopkg.lock"
+
+# Reset and update Go project github repo using dep:
+alias gup="gira; down; rmv; dep ensure -v"
 
 # Port function which tells whether a port is used or not. Usage: port 8080
 port() {
