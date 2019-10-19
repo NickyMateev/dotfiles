@@ -7,18 +7,22 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
-
 " Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Open and close NerdTree with <Shift-n>
+map <silent> <S-n> :NERDTreeToggle<CR>
+map <C-z> <NOP>"
 
 " Map leader key to ','
 let mapleader=","
