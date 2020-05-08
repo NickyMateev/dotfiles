@@ -23,12 +23,15 @@ export PATH=$HOME/mvn/apache-maven-3.5.0/bin:$PATH
 export PATH=$HOME/scripts:$GITPATH/NickyMateev/dotfiles/scripts:$PATH
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.ghcup/env:$PATH"
+export PATH="$HOME/.config/wtf/scripts:$PATH"
 
 export GITPATH="$HOME/Documents/GitHub"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
 export GOPATH="$HOME/go"
 
 # Aliases:
+
+alias vimrc="vim ~/.vimrc"
 
 # Edit zsh config, add to the dotfiles repo the newest config version and finally run it:
 zshconfig() {
@@ -88,9 +91,6 @@ dbr() {
   dc stop $1; dc rm $1; db $1 $2
 }
 
-# Open current Git repo in browser
-alias gh="open $(git config remote.origin.url)/tree/$(git branch | grep \* | cut -d ' ' -f2)"
-
 # Connect to local/docker postgres
 alias dp="psql -h localhost -U postgres"
 
@@ -116,11 +116,7 @@ port() {
   lsof -i ":$1"
 }
 
-# Inject docker environment variables:
-eval $(docker-machine env default)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

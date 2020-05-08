@@ -22,9 +22,8 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" Open and close NerdTree with <Shift-n>
-map <silent> <S-n> :NERDTreeToggle<CR>
-map <C-z> <NOP>"
+" Open and close NerdTree with <Ctrl-n>
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 " Map leader key to ','
 let mapleader=","
