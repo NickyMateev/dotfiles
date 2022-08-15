@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'preservim/vimux'
+Plugin 'benmills/vimux-golang'
 Plugin 'wsdjeg/vim-fetch'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -147,6 +148,10 @@ map <leader>vi :VimuxInspectRunner<CR>
 
 " Zoom the tmux runner pane (vimux)
 map <leader>vz :VimuxZoomRunner<CR>
+
+" Golang specific vimux mapping for running tests
+map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>rf :wa<CR> :GolangTestFocused<CR>
 
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
