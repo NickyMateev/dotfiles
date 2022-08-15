@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'preservim/vimux'
 Plugin 'wsdjeg/vim-fetch'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -131,6 +132,12 @@ autocmd VimEnter * NERDTree | wincmd p
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Prompt for a command to run (vimux)
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand (vimux)
+map <Leader>vl :VimuxRunLastCommand<CR>
 
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
