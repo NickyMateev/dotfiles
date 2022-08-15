@@ -137,10 +137,16 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Prompt for a command to run (vimux)
-map <Leader>vp :VimuxPromptCommand<CR>
+map <leader>vp :VimuxPromptCommand<CR>
 
 " Run last command executed by VimuxRunCommand (vimux)
-map <Leader>vl :VimuxRunLastCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane (vimux)
+map <leader>vi :VimuxInspectRunner<CR>
+
+" Zoom the tmux runner pane (vimux)
+map <leader>vz :VimuxZoomRunner<CR>
 
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
