@@ -45,6 +45,12 @@ nnoremap <C-k> <C-w><C-w>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+" Remap new vertical split shortcut
+map <leader>v <C-w>v
+
+" Remap new horizontal split shortcut
+map <leader>h <C-w>s
+
 " More natural split opening - open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
 set splitright
