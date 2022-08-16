@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-	
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/opt/homebrew/bin/fzf
@@ -22,6 +22,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'natebosch/vim-lsc'
 Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
+Plugin 'vim-autoformat/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -88,6 +89,13 @@ syntax on
 " Enable 256-color mode
 set t_Co=256
 
+" Popup window background color
+hi Pmenu ctermbg=blue
+hi Pmenu ctermfg=black
+
+" Popup window foreground color
+hi PmenuSel ctermfg=white
+
 " Hide buffer when switching files (when buffer is abandoned)
 set hidden
 
@@ -149,6 +157,9 @@ map <leader>vi :VimuxInspectRunner<CR>
 " Zoom the tmux runner pane (vimux)
 map <leader>vz :VimuxZoomRunner<CR>
 
+" Have code be formatted upon saving file
+au BufWrite * :Autoformat
+
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>rf :wa<CR> :GolangTestFocused<CR>
@@ -187,7 +198,7 @@ let &t_EI .= "\<Esc>[?2004l"
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
+	set pastetoggle=<Esc>[201~
+	set paste
+	return ""
 endfunction
