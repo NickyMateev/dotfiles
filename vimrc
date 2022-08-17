@@ -48,6 +48,12 @@ nnoremap <C-k> <C-w><C-w>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
+" Easier split resize
+nnoremap <C-w>j 10<C-w>-
+nnoremap <C-w>k 10<C-w>+
+nnoremap <C-w>h 10<C-w><
+nnoremap <C-w>l 10<C-w>>
+
 " Remap new vertical split shortcut
 map <leader>v <C-w>v
 
@@ -58,11 +64,20 @@ map <leader>h <C-w>s
 set splitbelow
 set splitright
 
+augroup CursorLineOnlyInActiveWindow
+	autocmd!
+	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+	autocmd WinLeave * setlocal nocursorline
+augroup END
+
 " Autoclose parentheses, brackets and quotes
 inoremap ( ()<Left>
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap " ""<Left>
+
+" When selecting an item from Popup menu with <Enter>, don't add new line: https://unix.stackexchange.com/a/334074/200517
+inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 
 " Set default tab length to be equivalent to the length of 4 spaces
 set tabstop=4
