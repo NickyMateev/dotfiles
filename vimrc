@@ -17,6 +17,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'natebosch/vim-lsc'
@@ -35,6 +36,9 @@ let mapleader=","
 " Press jk/kj to exit from insert mode
 inoremap jk <ESC>
 inoremap kj <ESC>
+
+" Require the cursor to always be at least 4 lines away from the top or bottom of the window
+set scrolloff=4
 
 " Disable arrow keys
 noremap <Up> <NOP>
@@ -69,6 +73,9 @@ augroup CursorLineOnlyInActiveWindow
 	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 	autocmd WinLeave * setlocal nocursorline
 augroup END
+
+" Close a split window in Vim without resizing other windows: https://stackoverflow.com/a/486058/5394999
+set noequalalways
 
 " Autoclose parentheses, brackets and quotes
 inoremap ( ()<Left>
@@ -133,6 +140,10 @@ set hlsearch
 " Enable syntax folding
 set foldmethod=syntax
 
+" Open all folds by default when opening new file
+set nofoldenable
+
+
 " Save current file with ,w instead of typing :w every time
 nnoremap <leader>w :w!<CR>
 
@@ -172,8 +183,8 @@ map <leader>vi :VimuxInspectRunner<CR>
 " Zoom the tmux runner pane (vimux)
 map <leader>vz :VimuxZoomRunner<CR>
 
-" Have code be formatted upon saving file
-au BufWrite * :Autoformat
+" Have code be formatted upon saving file (currently only for .dart files)
+au BufWrite *.dart :Autoformat
 
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
