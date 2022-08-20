@@ -184,7 +184,7 @@ map <leader>vi :VimuxInspectRunner<CR>
 map <leader>vz :VimuxZoomRunner<CR>
 
 " Have code be formatted upon saving file (currently only for .dart files)
-au BufWrite *.dart :Autoformat
+au BufWrite *.dart,*.json :Autoformat
 
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
@@ -194,8 +194,17 @@ map <Leader>rf :wa<CR> :GolangTestFocused<CR>
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <C-e> :History<CR>
 
+" Nicer previewer program than cat when listing files with fzf
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/bundle/fzf.vim/bin/preview.sh {}']}, <bang>0)
+
 " With the below command, every time we invoke Rg, FZF + ripgrep will not consider filename as a match in Vim
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 " Finding in files with fzf and ripgrep
 nnoremap <silent> <C-s> :Rg<CR>
