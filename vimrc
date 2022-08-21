@@ -23,6 +23,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'natebosch/vim-lsc'
 Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-autoformat/vim-autoformat'
 
 " All of your Plugins must be added before the following line
@@ -230,6 +231,9 @@ let g:flutter_autoscroll=1
 
 " Automatically open __Flutter_Output__ when starting flutter using :FlutterRun
 let g:flutter_show_log_on_run=0
+
+" Disable leafgarland/typescript-vim's autoindenting: https://github.com/leafgarland/typescript-vim#indenting
+let g:typescript_indent_disable = 1
 
 " Automatically set paste mode in Vim when pasting in insert mode
 let &t_SI .= "\<Esc>[?2004h"
