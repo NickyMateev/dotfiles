@@ -184,7 +184,7 @@ map <leader>vi :VimuxInspectRunner<CR>
 map <leader>vz :VimuxZoomRunner<CR>
 
 " Have code be formatted upon saving file (currently only for .dart files)
-au BufWrite *.dart,*.json :Autoformat
+au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
@@ -212,6 +212,7 @@ nnoremap <silent> <C-s> :Rg<CR>
 
 " Flutter command mappings
 map fr :FlutterRun<CR>
+map fs :FlutterSplit<CR>
 map fq :FlutterQuit<CR>
 
 " Enable lsp for go by using gopls
@@ -226,6 +227,9 @@ let g:lsc_auto_map = v:true
 
 " Autoscroll the flutter log when 1, defaults to 0
 let g:flutter_autoscroll=1
+
+" Automatically open __Flutter_Output__ when starting flutter using :FlutterRun
+let g:flutter_show_log_on_run=0
 
 " Automatically set paste mode in Vim when pasting in insert mode
 let &t_SI .= "\<Esc>[?2004h"
