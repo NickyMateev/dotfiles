@@ -191,6 +191,10 @@ map <leader>vz :VimuxZoomRunner<CR>
 " Have code be formatted upon saving file (currently only for .dart files)
 au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
+" Shortcuts for vim-go
+map gr :GoReferrers<CR>
+map gi :GoImplements<CR>
+
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>rf :wa<CR> :GolangTestFocused<CR>
