@@ -145,10 +145,6 @@ set hlsearch
 " Enable syntax folding
 set foldmethod=syntax
 
-" Open all folds by default when opening new file
-set nofoldenable
-
-
 " Save current file with ,w instead of typing :w every time
 nnoremap <leader>w :w!<CR>
 
@@ -192,8 +188,23 @@ map <leader>vz :VimuxZoomRunner<CR>
 au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
 " Shortcuts for vim-go
+map gd :GoDef<CR>
 map gr :GoReferrers<CR>
 map gi :GoImplements<CR>
+
+" Syntax highlighting from vim-go
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_chan_whitespace_error = 1
+let g:go_highlight_space_tab_error = 1
+let g:go_highlight_trailing_whitespace_error = 1
 
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
