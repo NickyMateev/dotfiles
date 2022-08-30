@@ -188,7 +188,6 @@ map <leader>vz :VimuxZoomRunner<CR>
 au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
 " Shortcuts for vim-go
-map gd :GoDef<CR>
 map gr :GoReferrers<CR>
 map gi :GoImplements<CR>
 
@@ -205,6 +204,10 @@ let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_space_tab_error = 1
 let g:go_highlight_trailing_whitespace_error = 1
+
+let g:go_updatetime = 250
+let g:go_auto_sameids = 1
+hi def goSameId ctermbg=18 ctermfg=white
 
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
