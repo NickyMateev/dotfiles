@@ -26,6 +26,15 @@ Plugin 'thosakwe/vim-flutter'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-autoformat/vim-autoformat'
 
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -90,6 +99,9 @@ inoremap " ""<Left>
 
 " When selecting an item from Popup menu with <Enter>, don't add new line: https://unix.stackexchange.com/a/334074/200517
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+
+" When Popup menu appears use <TAB> for selecting item
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Set default tab length to be equivalent to the length of 4 spaces
 set tabstop=4
