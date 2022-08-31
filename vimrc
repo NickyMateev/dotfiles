@@ -33,7 +33,6 @@ else
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -223,9 +222,17 @@ let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_space_tab_error = 1
 let g:go_highlight_trailing_whitespace_error = 1
 
+let g:go_metalinter_autosave = 1
 let g:go_updatetime = 250
+let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 hi def goSameId ctermbg=18 ctermfg=white
+
+" Use deoplete for autocompletion
+let g:deoplete#enable_at_startup = 1
+
+" Instructs deoplete to use omni completion for Go files
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
