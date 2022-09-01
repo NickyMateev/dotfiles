@@ -25,6 +25,8 @@ Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-autoformat/vim-autoformat'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
