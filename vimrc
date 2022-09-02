@@ -121,13 +121,11 @@ syntax on
 " Enable 256-color mode
 set t_Co=256
 
-" Popup window background color
-
+" Popup window color schemes
 hi Pmenu ctermbg=black
 hi Pmenu ctermfg=white
-
-" Popup window foreground color
-hi PmenuSel ctermbg=grey
+hi PmenuSel ctermbg=63
+hi PmenuSel ctermfg=white
 
 " Hide buffer when switching files (when buffer is abandoned)
 set hidden
