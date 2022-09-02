@@ -80,16 +80,6 @@ map <leader>h <C-w>s
 set splitbelow
 set splitright
 
-" Add indentation guides/lines: https://vi.stackexchange.com/a/11403/15709
-set cursorcolumn
-set cursorline
-
-augroup CursorLineOnlyInActiveWindow
-	autocmd!
-	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-	autocmd WinLeave * setlocal nocursorline
-augroup END
-
 " Close a split window in Vim without resizing other windows: https://stackoverflow.com/a/486058/5394999
 set noequalalways
 
