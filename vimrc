@@ -122,11 +122,12 @@ syntax on
 set t_Co=256
 
 " Popup window background color
-hi Pmenu ctermbg=blue
-hi Pmenu ctermfg=black
+
+hi Pmenu ctermbg=black
+hi Pmenu ctermfg=white
 
 " Popup window foreground color
-hi PmenuSel ctermfg=white
+hi PmenuSel ctermbg=grey
 
 " Hide buffer when switching files (when buffer is abandoned)
 set hidden
