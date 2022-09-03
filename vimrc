@@ -260,8 +260,22 @@ let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls -remote=auto'}"
 " Map dart filetype to the command that starts the language server
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 
-" Use all the vim-lsc defaults
-let g:lsc_auto_map = v:true
+" Use the following vim-lsc key mappings
+let g:lsc_auto_map = {
+    \ 'GoToDefinition': '<C-]>',
+    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+    \ 'FindReferences': 'gr',
+    \ 'NextReference': 'gn',
+    \ 'PreviousReference': 'gp',
+    \ 'FindImplementations': 'gI',
+    \ 'FindCodeActions': 'ga',
+    \ 'Rename': 'gR',
+    \ 'ShowHover': v:true,
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'SignatureHelp': 'gm',
+    \ 'Completion': 'completefunc',
+    \}
 
 " Autoscroll the flutter log when 1, defaults to 0
 let g:flutter_autoscroll=1
