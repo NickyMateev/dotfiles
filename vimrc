@@ -31,6 +31,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 if has('nvim')
+  Plugin 'tveskag/nvim-blame-line'
+endif
+
+if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plugin 'Shougo/deoplete.nvim'
@@ -227,6 +231,18 @@ call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 " Golang specific vimux mapping for running tests
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>rf :wa<CR> :GolangTestFocused<CR>
+
+" Enable 'tveskag/nvim-blame-line' on startup:
+autocmd BufEnter * EnableBlameLine
+
+" Specify the highlight group used for the virtual text ('Comment' by default)
+let g:blameLineVirtualTextHighlight = 'Ignore'
+
+" Customize format for git blame (Default format: '%an | %ar | %s')
+let g:blameLineGitFormat = '%an - %ad • %s'
+
+" Change message when content is not committed
+let g:blameLineMessageWhenNotYetCommited = ''
 
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
