@@ -156,11 +156,8 @@ set hlsearch
 " Enable syntax folding
 set foldmethod=syntax
 
-" Expand a Vim fold automatically when your put your cursor on it
-" Source 1: https://stackoverflow.com/a/7037762/5394999
-" Source 2: http://vimdoc.sourceforge.net/htmldoc/fold.html
-set foldopen=all
-set foldclose=all
+" Expand all folds on open by default
+set foldlevel=99
 
 " Save current file with ,w instead of typing :w every time
 nnoremap <leader>w :w!<CR>
