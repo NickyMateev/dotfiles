@@ -57,6 +57,9 @@ inoremap kj <ESC>
 " Require the cursor to always be at least 4 lines away from the top or bottom of the window
 set scrolloff=4
 
+" Make cursor blink: https://vi.stackexchange.com/a/29130/15709
+set guicursor=a:blinkwait5-blinkon5-blinkoff5
+
 " Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
