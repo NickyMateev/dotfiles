@@ -232,6 +232,14 @@ call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>rf :wa<CR> :GolangTestFocused<CR>
 
+" Mappings for vim-fugitive:
+nnoremap <space>gs :Git status<CR>
+nnoremap <space>gm :Git commit<CR>
+nnoremap <space>up :Git push<CR>
+nnoremap <space>down :Git pull<CR>
+nnoremap <space>gf :Git fetch<CR>
+nnoremap <space>gff :Git diff<CR>
+
 " Enable 'tveskag/nvim-blame-line' on startup:
 autocmd BufEnter * EnableBlameLine
 
