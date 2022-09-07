@@ -170,6 +170,7 @@ nnoremap <leader>wq :wq<CR>
 
 " Quit current file with ,q instead of typing :q every time
 nnoremap <leader>q :q<CR>
+nnoremap <leader>q! :q!<CR>
 
 " Easily open .vimrc
 map <leader><leader> :vsp $GITPATH/github.com/NickyMateev/dotfiles/vimrc<CR>
