@@ -82,10 +82,10 @@ nnoremap <C-w>h 10<C-w><
 nnoremap <C-w>l 10<C-w>>
 
 " Remap new vertical split shortcut
-map <leader>v <C-w>v
+noremap <leader>v <C-w>v
 
 " Remap new horizontal split shortcut
-map <leader>h <C-w>s
+noremap <leader>h <C-w>s
 
 " More natural split opening - open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
@@ -95,7 +95,7 @@ set splitright
 set noequalalways
 
 " Delete current line without leaving insert mode
-imap <C-d> <esc>ddi
+inoremap <C-d> <esc>ddi
 
 " Autoclose parentheses, brackets and quotes
 inoremap ( ()<Left>
@@ -179,38 +179,38 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>qq :q!<CR>
 
 " Easily open .vimrc
-map <leader><leader> :vsp $GITPATH/github.com/NickyMateev/dotfiles/vimrc<CR>
+noremap <leader><leader> :vsp $GITPATH/github.com/NickyMateev/dotfiles/vimrc<CR>
 
 " Reload .vimrc
-map <leader>. :source ~/.vimrc<CR>
+noremap <leader>. :source ~/.vimrc<CR>
 
 " Open and close NerdTree with <Ctrl-n>
-map <silent> <C-n> :NERDTreeToggle<CR>
+noremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " View the current buffer (file) in NERDTree
-map <leader>r :NERDTreeFind<CR>
+noremap <leader>r :NERDTreeFind<CR>
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Prompt for a command to run (vimux)
-map <leader>vp :VimuxPromptCommand<CR>
+noremap <leader>vp :VimuxPromptCommand<CR>
 
 " Run last command executed by VimuxRunCommand (vimux)
-map <leader>vl :VimuxRunLastCommand<CR>
+noremap <leader>vl :VimuxRunLastCommand<CR>
 
 " Inspect runner pane (vimux)
-map <leader>vi :VimuxInspectRunner<CR>
+noremap <leader>vi :VimuxInspectRunner<CR>
 
 " Zoom the tmux runner pane (vimux)
-map <leader>vz :VimuxZoomRunner<CR>
+noremap <leader>vz :VimuxZoomRunner<CR>
 
 " Have code be formatted upon saving file (currently only for .dart files)
 au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
 " Shortcuts for vim-go
-map gr :GoReferrers<CR>
-map gi :GoImplements<CR>
+noremap gr :GoReferrers<CR>
+noremap gi :GoImplements<CR>
 
 " Syntax highlighting from vim-go
 let g:go_highlight_operators = 1
@@ -239,8 +239,8 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " Golang specific vimux mapping for running tests
-map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>rf :wa<CR> :GolangTestFocused<CR>
+noremap <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
+noremap <Leader>rf :wa<CR> :GolangTestFocused<CR>
 
 " Mappings for vim-fugitive:
 nnoremap <space>gs :Git status<CR>
@@ -283,9 +283,9 @@ command! -bang -nargs=* Rg
 nnoremap <silent> <C-s> :Rg<CR>
 
 " Flutter command mappings
-map fr :FlutterRun<CR>
-map fs :FlutterSplit<CR>
-map fq :FlutterQuit<CR>
+noremap fr :FlutterRun<CR>
+noremap fs :FlutterSplit<CR>
+noremap fq :FlutterQuit<CR>
 
 " Enable lsp for go by using gopls
 let g:completor_filetype_map = {}
