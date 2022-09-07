@@ -99,7 +99,7 @@ inoremap <C-d> <esc>ddi
 
 " Autoclose parentheses, brackets and quotes
 inoremap ( ()<Left>
-inoremap { {}<Left>
+inoremap { {}<Left><CR><Esc><S-o>
 inoremap [ []<Left>
 inoremap " ""<Left>
 
