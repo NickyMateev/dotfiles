@@ -128,6 +128,9 @@ syntax on
 " Enable 256-color mode
 set t_Co=256
 
+" Search highlight color
+hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
+
 " Popup window color schemes
 hi Pmenu ctermbg=black
 hi Pmenu ctermfg=white
