@@ -94,6 +94,9 @@ set splitright
 " Close a split window in Vim without resizing other windows: https://stackoverflow.com/a/486058/5394999
 set noequalalways
 
+" Delete current line without leaving insert mode
+imap <C-d> <esc>ddi
+
 " Autoclose parentheses, brackets and quotes
 inoremap ( ()<Left>
 inoremap { {}<Left>
