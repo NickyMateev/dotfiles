@@ -54,6 +54,9 @@ let mapleader=","
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+" Do not wrap text if it is longer than current visible row
+set nowrap
+
 " Require the cursor to always be at least 4 lines away from the top or bottom of the window
 set scrolloff=4
 
