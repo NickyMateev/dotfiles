@@ -51,8 +51,8 @@ filetype plugin indent on    " required
 let mapleader=","
 
 " Press jk/kj to exit from insert mode
-inoremap jk <ESC>
-inoremap kj <ESC>
+inoremap jk <ESC>l
+inoremap kj <ESC>l
 
 " Do not wrap text if it is longer than current visible row
 set nowrap
