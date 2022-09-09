@@ -213,8 +213,8 @@ noremap <leader>vz :VimuxZoomRunner<CR>
 au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
 " Shortcuts for vim-go
-noremap gr :GoReferrers<CR>
-noremap gi :GoImplements<CR>
+noremap gr :GoReferrers<CR><C-w><C-j>
+noremap gi :GoImplements<CR><C-w><C-j>
 
 " Syntax highlighting from vim-go
 let g:go_highlight_operators = 1
