@@ -27,6 +27,7 @@ Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-autoformat/vim-autoformat'
+Plugin 'miyakogi/conoline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
