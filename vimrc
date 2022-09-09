@@ -94,6 +94,9 @@ set splitright
 " Close a split window in Vim without resizing other windows: https://stackoverflow.com/a/486058/5394999
 set noequalalways
 
+" Put current line to center of screen after scrolling down
+nnoremap <C-d> <C-d>zz
+
 " Delete current line without leaving insert mode
 inoremap <C-d> <esc>ddi
 
