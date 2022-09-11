@@ -51,6 +51,9 @@ filetype plugin indent on    " required
 " Map leader key to ','
 let mapleader=","
 
+" Pasting without losing paste register
+vnoremap <leader>p "_dP
+
 " Press jk/kj to exit from insert mode
 inoremap jk <ESC>l
 inoremap kj <ESC>l
