@@ -30,6 +30,8 @@ Plugin 'vim-autoformat/vim-autoformat'
 Plugin 'miyakogi/conoline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 if has('nvim')
   Plugin 'tveskag/nvim-blame-line'
@@ -47,6 +49,8 @@ endif
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
+
+set encoding=UTF-8
 
 " Map leader key to ','
 let mapleader=","
@@ -326,6 +330,36 @@ let g:flutter_show_log_on_run=0
 
 " Disable leafgarland/typescript-vim's autoindenting: https://github.com/leafgarland/typescript-vim#indenting
 let g:typescript_indent_disable = 1
+
+" you can add these colors to your .vimrc to help customizing: https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#configuration
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "689FB6"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['go'] = s:blue " sets the color of go files to blue
+let g:NERDTreeExtensionHighlightColor['md'] = s:aqua " sets the color of md files to aqua
+
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
+let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
 
 " Automatically set paste mode in Vim when pasting in insert mode
 let &t_SI .= "\<Esc>[?2004h"
