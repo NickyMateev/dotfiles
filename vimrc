@@ -32,6 +32,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 if has('nvim')
   Plugin 'tveskag/nvim-blame-line'
