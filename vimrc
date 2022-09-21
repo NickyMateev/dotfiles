@@ -91,10 +91,7 @@ nnoremap <C-w>h 10<C-w><
 nnoremap <C-w>l 10<C-w>>
 
 " Remap new vertical split shortcut
-noremap <leader>v <C-w>v
-
-" Remap new horizontal split shortcut
-noremap <leader>h <C-w>s
+noremap <C-w>v :vnew<CR>
 
 " More natural split opening - open new split panes to right and bottom, which feels more natural than Vim’s default
 set splitbelow
