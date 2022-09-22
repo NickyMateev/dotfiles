@@ -12,7 +12,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-repeat'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'preservim/vimux'
-Plugin 'benmills/vimux-golang'
 Plugin 'wsdjeg/vim-fetch'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -25,7 +24,6 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'natebosch/vim-lsc'
 Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-autoformat/vim-autoformat'
 Plugin 'miyakogi/conoline.vim'
 Plugin 'vim-airline/vim-airline'
@@ -246,10 +244,6 @@ let g:deoplete#enable_at_startup = 1
 
 " Instructs deoplete to use omni completion for Go files
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-
-" Golang specific vimux mapping for running tests
-noremap <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
-noremap <Leader>rf :wa<CR> :GolangTestFocused<CR>
 
 " Mappings for vim-fugitive:
 nnoremap <space>gs :Git status<CR>
