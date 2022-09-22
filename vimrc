@@ -145,6 +145,9 @@ set t_Co=256
 " Search highlight color
 hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
 
+" Clear search highlight with Esc: https://tech.serhatteker.com/post/2020-03/clear-search-highlight-in-vim/#ps
+nnoremap <esc> :noh <CR>
+
 " Popup window color schemes
 hi Pmenu ctermbg=black
 hi Pmenu ctermfg=white
