@@ -25,6 +25,7 @@ Plugin 'natebosch/vim-lsc'
 Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
 Plugin 'vim-autoformat/vim-autoformat'
+Plugin 'wellle/context.vim'
 Plugin 'miyakogi/conoline.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -345,6 +346,12 @@ let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the c
 
 let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
 let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
+
+" Settings for 'wellle/context.vim':
+let g:context_highlight_border = 'Ignore'
+let g:context_highlight_normal = 'PMenu'
+let g:context_highlight_border = '<hide>'
+let g:context_highlight_tag = '<hide>'
 
 " Automatically set paste mode in Vim when pasting in insert mode
 let &t_SI .= "\<Esc>[?2004h"
