@@ -33,7 +33,7 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'rafi/awesome-vim-colorschemes'
 
 if has('nvim')
-  Plugin 'tveskag/nvim-blame-line'
+  Plugin 'APZelos/blamer.nvim'
 endif
 
 if has('nvim')
@@ -253,17 +253,10 @@ nnoremap <space>down :Git pull<CR>
 nnoremap <space>gf :Git fetch<CR>
 nnoremap <space>gff :Git diff<CR>
 
-" Enable 'tveskag/nvim-blame-line' on startup:
-autocmd BufEnter * EnableBlameLine
-
-" Specify the highlight group used for the virtual text ('Comment' by default)
-let g:blameLineVirtualTextHighlight = 'Ignore'
-
-" Customize format for git blame (Default format: '%an | %ar | %s')
-let g:blameLineGitFormat = '%an - %ad • %s'
-
-" Change message when content is not committed
-let g:blameLineMessageWhenNotYetCommited = ''
+" Settings for 'APZelos/blamer.nvim':
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+hi! link Blamer Ignore
 
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
