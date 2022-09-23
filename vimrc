@@ -25,6 +25,7 @@ Plugin 'natebosch/vim-lsc'
 Plugin 'natebosch/vim-lsc-dart'
 Plugin 'thosakwe/vim-flutter'
 Plugin 'vim-autoformat/vim-autoformat'
+Plugin 'SirVer/ultisnips'
 Plugin 'wellle/context.vim'
 Plugin 'miyakogi/conoline.vim'
 Plugin 'vim-airline/vim-airline'
@@ -248,6 +249,8 @@ let g:deoplete#enable_at_startup = 1
 
 " Instructs deoplete to use omni completion for Go files
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+
+let g:go_snippet_engine = "ultisnips"
 
 " Mappings for vim-fugitive:
 nnoremap <space>gs :Git status<CR>
