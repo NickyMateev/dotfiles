@@ -250,7 +250,13 @@ let g:deoplete#enable_at_startup = 1
 " Instructs deoplete to use omni completion for Go files
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
+" Set vim-go snippet engine
 let g:go_snippet_engine = "ultisnips"
+
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<TAB>"                                            
+let g:UltiSnipsJumpForwardTrigger="<TAB>"                                       
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 " Mappings for vim-fugitive:
 nnoremap <space>gs :Git status<CR>
