@@ -117,6 +117,7 @@ inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 
 " When Popup menu appears use <TAB> for selecting item
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " Set default tab length to be equivalent to the length of 4 spaces
 set tabstop=4
