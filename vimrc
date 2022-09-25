@@ -147,6 +147,12 @@ set t_Co=256
 " Search highlight color
 hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
 
+" Better Git diff colors: https://www.codyhiar.com/blog/vimdiff-better-highlighting
+hi DiffAdd    cterm=BOLD ctermfg=NONE ctermbg=22
+hi DiffDelete cterm=BOLD ctermfg=NONE ctermbg=52
+hi DiffChange cterm=BOLD ctermfg=NONE ctermbg=23
+hi DiffText   cterm=BOLD ctermfg=NONE ctermbg=23
+
 " Clear search highlight with Esc: https://tech.serhatteker.com/post/2020-03/clear-search-highlight-in-vim/#ps
 nnoremap <esc> :noh <CR>
 
