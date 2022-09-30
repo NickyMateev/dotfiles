@@ -284,6 +284,7 @@ hi! link Blamer Ignore
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <C-e> :History<CR>
+nnoremap <silent> <C-c> :History:<CR>
 
 " Nicer previewer program (bat) than cat when listing files with fzf: https://github.com/junegunn/fzf.vim#example-customizing-files-command
 command! -bang -nargs=? -complete=dir Files
