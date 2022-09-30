@@ -339,9 +339,6 @@ let g:flutter_autoscroll=1
 " Automatically open __Flutter_Output__ when starting flutter using :FlutterRun
 let g:flutter_show_log_on_run=0
 
-" Disable leafgarland/typescript-vim's autoindenting: https://github.com/leafgarland/typescript-vim#indenting
-let g:typescript_indent_disable = 1
-
 " you can add these colors to your .vimrc to help customizing: https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#configuration
 let s:brown = "905532"
 let s:aqua =  "3AFFDB"
