@@ -289,6 +289,7 @@ nnoremap <silent> <C-e> :History<CR>
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+" Make fzf completely delegate its search responsibliity to ripgrep process: https://github.com/junegunn/fzf.vim#example-advanced-ripgrep-integration
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
