@@ -286,7 +286,7 @@ nnoremap <silent> <C-e> :History<CR>
 
 " Nicer previewer program (bat) than cat when listing files with fzf: https://github.com/junegunn/fzf.vim#example-customizing-files-command
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.vim/bundle/fzf.vim/bin/preview.sh {}']}, <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " With the below command, every time we invoke Rg, FZF + ripgrep will not consider filename as a match in Vim
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
