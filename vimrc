@@ -263,7 +263,7 @@ call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 let g:go_snippet_engine = "ultisnips"
 
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<TAB>"                                            
+let g:UltiSnipsExpandTrigger="<Enter>"                                            
 let g:UltiSnipsJumpForwardTrigger="<TAB>"                                       
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
