@@ -276,6 +276,12 @@ nnoremap <C-g>f :Git fetch<CR>
 nnoremap <C-g>ff :Git diff<CR>
 nnoremap <C-g>w :.GBrowse<CR>
 
+" Mappings for vim-gitgutter:
+nnoremap <C-h>j <Plug>(GitGutterNextHunk)
+nnoremap <C-h>k <Plug>(GitGutterPrevHunk)
+nnoremap <C-h>s <Plug>(GitGutterStageHunk)
+nnoremap <C-h>p <Plug>(GitGutterPreviewHunk)
+
 " Settings for 'APZelos/blamer.nvim':
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
