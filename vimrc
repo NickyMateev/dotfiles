@@ -304,6 +304,8 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " Finding in files with fzf and ripgrep
 nnoremap <silent> <C-s> :RG<CR>
 
+noremap <C-Space>j :Autoformat json<CR>
+
 " Flutter command mappings
 noremap fr :FlutterRun<CR>
 noremap fs :FlutterSplit<CR>
