@@ -274,6 +274,7 @@ nnoremap <C-g>u :Git push<CR>
 nnoremap <C-g>d :Git pull<CR>
 nnoremap <C-g>f :Git fetch<CR>
 nnoremap <C-g>ff :Git diff<CR>
+nnoremap <C-g>w :.GBrowse<CR>
 
 " Settings for 'APZelos/blamer.nvim':
 let g:blamer_enabled = 1
