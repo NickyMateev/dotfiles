@@ -9,7 +9,18 @@
 			"filetypes": [
 				"go"
 			]
+		},
+		"efm": {
+			"command": "efm-langserver",
+			"args": [],
+			"filetypes": [
+				"vim",
+				"eruby",
+				"markdown",
+				"yaml"
+			]
 		}
 	},
+	"suggest.noselect": true,
 	"flutter.lsp.initialization.closingLabels": true
 }
