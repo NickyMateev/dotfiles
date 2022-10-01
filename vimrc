@@ -8,38 +8,25 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-repeat'
+
+" Navigation plugins
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'preservim/vimux'
 Plugin 'wsdjeg/vim-fetch'
+Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'fatih/vim-go'
+
+" Git plugins
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rhysd/git-messenger.vim'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'natebosch/vim-lsc'
-Plugin 'natebosch/vim-lsc-dart'
-Plugin 'thosakwe/vim-flutter'
-Plugin 'vim-autoformat/vim-autoformat'
-Plugin 'SirVer/ultisnips'
-Plugin 'wellle/context.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'miyakogi/conoline.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'rafi/awesome-vim-colorschemes'
-
 if has('nvim')
   Plugin 'APZelos/blamer.nvim'
 endif
 
+" Programming language plugins 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -47,6 +34,28 @@ else
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
+Plugin 'fatih/vim-go'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'natebosch/vim-lsc'
+Plugin 'natebosch/vim-lsc-dart'
+Plugin 'thosakwe/vim-flutter'
+Plugin 'SirVer/ultisnips'
+Plugin 'wellle/context.vim'
+Plugin 'vim-autoformat/vim-autoformat'
+
+" Appearance plugins
+Plugin 'miyakogi/conoline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'rafi/awesome-vim-colorschemes'
+
+" Other plugins
+Plugin 'tpope/vim-repeat'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
