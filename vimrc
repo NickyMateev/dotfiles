@@ -1,66 +1,55 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/opt/homebrew/bin/fzf
-call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Navigation plugins
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'preservim/vimux'
-Plugin 'wsdjeg/vim-fetch'
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/vimux'
+Plug 'wsdjeg/vim-fetch'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Git plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rhysd/git-messenger.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
 if has('nvim')
-  Plugin 'APZelos/blamer.nvim'
+  Plug 'APZelos/blamer.nvim'
 endif
 
 " Programming language plugins 
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plugin 'fatih/vim-go'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'natebosch/vim-lsc'
-Plugin 'natebosch/vim-lsc-dart'
-Plugin 'thosakwe/vim-flutter'
-Plugin 'SirVer/ultisnips'
-Plugin 'wellle/context.vim'
-Plugin 'vim-autoformat/vim-autoformat'
+Plug 'fatih/vim-go'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+Plug 'thosakwe/vim-flutter'
+Plug 'SirVer/ultisnips'
+Plug 'wellle/context.vim'
+Plug 'vim-autoformat/vim-autoformat'
 
 " Appearance plugins
-Plugin 'miyakogi/conoline.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plugin 'rafi/awesome-vim-colorschemes'
+Plug 'miyakogi/conoline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'rafi/awesome-vim-colorschemes'
 
 " Other plugins
-Plugin 'tpope/vim-repeat'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
+Plug 'tpope/vim-repeat'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" Put your non-Plugin stuff after this line
+call plug#end()
 
 set wildmenu " list command-line auto-completion suggestions
 set encoding=UTF-8
