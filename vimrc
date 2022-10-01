@@ -66,7 +66,6 @@ set hidden " hide buffer when switching files (when buffer is abandoned)
 set smartcase
 
 set ignorecase " use case insensitive search, except when using capital letters
-set hlsearch " turn on search highlighting on word being searched with '*'
 
 set foldmethod=syntax " enable syntax folding
 set foldlevel=99 " expand all folds on open by default
@@ -119,17 +118,9 @@ inoremap { {}<Left><CR><Esc><S-o>
 inoremap [ []<Left>
 inoremap " ""<Left>
 
-" When selecting an item from Popup menu with <Enter>, don't add new line: https://unix.stackexchange.com/a/334074/200517
-inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
-
-" When Popup menu appears use <TAB> for selecting item
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
 
 " Enable syntax highlighting
 syntax on
-
 
 " Search highlight color
 hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
@@ -189,9 +180,33 @@ noremap <leader>vz :VimuxZoomRunner<CR>
 " Have code be formatted upon saving file (currently only for .dart files)
 au BufWrite *.dart,*.json,*.ts,*.js :Autoformat
 
-" Shortcuts for vim-go
-noremap gr :GoReferrers<CR>
-noremap gi :GoImplements<CR>
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming
+nnoremap <leader>rn <Plug>(coc-rename)
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Syntax highlighting from vim-go
 let g:go_highlight_operators = 1
@@ -209,8 +224,6 @@ let g:go_highlight_trailing_whitespace_error = 1
 
 let g:go_metalinter_autosave = 1
 let g:go_updatetime = 250
-let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
 hi def goSameId ctermbg=18 ctermfg=white
 
 " Set vim-go snippet engine
