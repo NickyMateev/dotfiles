@@ -62,7 +62,37 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
+set wildmenu " list command-line auto-completion suggestions
 set encoding=UTF-8
+set t_Co=256 " enable 256-color mode
+
+set nowrap " do not wrap text if it is longer than current visible row
+set scrolloff=4 " require the cursor to always be at least 4 lines away from the top or bottom of the window
+set guicursor=a:blinkwait5-blinkon5-blinkoff5 " make cursor blink: https://vi.stackexchange.com/a/29130/15709
+
+set splitbelow " open new horizontal split below
+set splitright " open new vertical split to the right
+set noequalalways " close a split window in Vim without resizing other windows: https://stackoverflow.com/a/486058/5394999
+
+set tabstop=4 " set default tab length to be equivalent to the length of 4 spaces
+set shiftwidth=4 " an indent to correspond to a single tab
+set noexpandtab " try to use tab bytes alone
+
+set number " show current line number
+set relativenumber " show relative line numbers
+set showcmd " show current command in the bottom right corner when typed
+set hidden " hide buffer when switching files (when buffer is abandoned)
+set smartcase
+
+set ignorecase " use case insensitive search, except when using capital letters
+set hlsearch " turn on search highlighting on word being searched with '*'
+
+set foldmethod=syntax " enable syntax folding
+set foldlevel=99 " expand all folds on open by default
+
+set mouse=a " enable use of the mouse for all modes
+set clipboard=unnamed " use the system clipboard for copy and paste
+set updatetime=100 " make Vim's updatetime shorter (default is 4000 ms)
 
 " Map leader key to ','
 let mapleader=","
@@ -73,15 +103,6 @@ vnoremap <leader>p "_dP
 " Press jk/kj to exit from insert mode
 inoremap jk <ESC>l
 inoremap kj <ESC>l
-
-" Do not wrap text if it is longer than current visible row
-set nowrap
-
-" Require the cursor to always be at least 4 lines away from the top or bottom of the window
-set scrolloff=4
-
-" Make cursor blink: https://vi.stackexchange.com/a/29130/15709
-set guicursor=a:blinkwait5-blinkon5-blinkoff5
 
 " Disable arrow keys
 noremap <Up> <NOP>
@@ -104,12 +125,6 @@ nnoremap <C-w>l 10<C-w>>
 " Remap new vertical split shortcut
 noremap <C-w>v :vnew<CR>
 
-" More natural split opening - open new split panes to right and bottom, which feels more natural than Vim’s default
-set splitbelow
-set splitright
-
-" Close a split window in Vim without resizing other windows: https://stackoverflow.com/a/486058/5394999
-set noequalalways
 
 " Put current line to center of screen after scrolling down
 nnoremap <C-d> <C-d>zz
@@ -130,30 +145,10 @@ inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-" Set default tab length to be equivalent to the length of 4 spaces
-set tabstop=4
-
-" An indent to correspond to a single tab
-set shiftwidth=4
-
-" Try to use tab bytes alone
-set noexpandtab
-
-" Enable use of the mouse for all modes
-set mouse=a
-
-" Display line numbers on the left
-set number " Show current line number
-set relativenumber " Show relative line numbers
-
-" List command-line auto-completion suggestions
-set wildmenu
 
 " Enable syntax highlighting
 syntax on
 
-" Enable 256-color mode
-set t_Co=256
 
 " Search highlight color
 hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
@@ -172,31 +167,6 @@ hi Pmenu ctermbg=black
 hi Pmenu ctermfg=white
 hi PmenuSel ctermbg=63
 hi PmenuSel ctermfg=white
-
-" Hide buffer when switching files (when buffer is abandoned)
-set hidden
-
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
-
-" Show current command in the bottom right corner when typed
-set showcmd
-
-" Use the system clipboard for copy and paste
-set clipboard=unnamed
-
-" Make Vim's updatetime shorter (default is 4000 ms)
-set updatetime=100
-
-" Turn on search highlighting on word being searched with '*'
-set hlsearch
-
-" Enable syntax folding
-set foldmethod=syntax
-
-" Expand all folds on open by default
-set foldlevel=99
 
 " Save current file with ,w instead of typing :w every time
 nnoremap <leader>w :w!<CR>
