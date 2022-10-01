@@ -20,17 +20,9 @@ if has('nvim')
 endif
 
 " Programming language plugins 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
 Plug 'thosakwe/vim-flutter'
 Plug 'SirVer/ultisnips'
 Plug 'wellle/context.vim'
@@ -220,12 +212,6 @@ let g:go_updatetime = 250
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 hi def goSameId ctermbg=18 ctermfg=white
-
-" Use deoplete for autocompletion
-let g:deoplete#enable_at_startup = 1
-
-" Instructs deoplete to use omni completion for Go files
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " Set vim-go snippet engine
 let g:go_snippet_engine = "ultisnips"
