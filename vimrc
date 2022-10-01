@@ -247,6 +247,7 @@ nnoremap <C-g>w :.GBrowse<CR>
 nnoremap <C-h>j <Plug>(GitGutterNextHunk)
 nnoremap <C-h>k <Plug>(GitGutterPrevHunk)
 nnoremap <C-h>s <Plug>(GitGutterStageHunk)
+nnoremap <C-h>u <Plug>(GitGutterUndoHunk)
 nnoremap <C-h>p <Plug>(GitGutterPreviewHunk)
 
 " Settings for 'APZelos/blamer.nvim':
