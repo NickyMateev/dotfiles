@@ -83,6 +83,7 @@ vnoremap <leader>p "_dP
 " Press jk/kj to exit from insert mode
 inoremap jk <ESC>l
 inoremap kj <ESC>l
+inoremap <ESC> <NOP>
 
 " Disable arrow keys
 noremap <Up> <NOP>
