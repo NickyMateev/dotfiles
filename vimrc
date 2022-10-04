@@ -281,6 +281,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 nnoremap <silent> <C-s> :RG<CR>
 
 noremap <C-Space>j :Autoformat json<CR>
+autocmd FileType json :Autoformat json
 
 " Flutter command mappings
 noremap fr :FlutterRun<CR>
