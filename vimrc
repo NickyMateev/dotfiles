@@ -144,12 +144,8 @@ hi PmenuSel ctermfg=white
 " Save current file with ,w instead of typing :w every time
 nnoremap <leader>w :w!<CR>
 
-" Save current file and quit with ,wq instead of typing :wq every time
-nnoremap <leader>wq :wq<CR>
-
 " Quit current file with ,q instead of typing :q every time
 nnoremap <leader>q :q<CR>
-nnoremap <leader>qq :q!<CR>
 
 " Easily open .vimrc
 noremap <leader><leader> :vsp $GITPATH/github.com/NickyMateev/dotfiles/vimrc<CR>
