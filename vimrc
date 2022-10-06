@@ -91,6 +91,12 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Enable h,j,k,l navigation while in insert mode
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 " Easier split navigations
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-w>
