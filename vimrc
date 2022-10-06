@@ -244,9 +244,9 @@ nnoremap <C-g>w :.GBrowse<CR>
 " Mappings for vim-gitgutter:
 nnoremap <C-g>j <Plug>(GitGutterNextHunk)
 nnoremap <C-g>k <Plug>(GitGutterPrevHunk)
-nnoremap <C-g>sh <Plug>(GitGutterStageHunk)
-nnoremap <C-g>uh <Plug>(GitGutterUndoHunk)
-nnoremap <C-g>ph <Plug>(GitGutterPreviewHunk)
+nnoremap <C-g>hs <Plug>(GitGutterStageHunk)
+nnoremap <C-g>hu <Plug>(GitGutterUndoHunk)
+nnoremap <C-g>hp <Plug>(GitGutterPreviewHunk)
 
 " Settings for 'APZelos/blamer.nvim':
 let g:blamer_enabled = 1
