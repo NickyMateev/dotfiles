@@ -236,7 +236,7 @@ let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 " Mappings for vim-fugitive:
-nnoremap <C-g>s :Git status<CR>
+nnoremap <C-g>st :Git status<CR>
 nnoremap <C-g>a :Git add -A<CR>
 nnoremap <C-g>m :Git commit<CR>
 nnoremap <C-g>u :Git push<CR>
@@ -246,11 +246,11 @@ nnoremap <C-g>ff :Git diff<CR>
 nnoremap <C-g>w :.GBrowse<CR>
 
 " Mappings for vim-gitgutter:
-nnoremap <C-h>j <Plug>(GitGutterNextHunk)
-nnoremap <C-h>k <Plug>(GitGutterPrevHunk)
-nnoremap <C-h>s <Plug>(GitGutterStageHunk)
-nnoremap <C-h>u <Plug>(GitGutterUndoHunk)
-nnoremap <C-h>p <Plug>(GitGutterPreviewHunk)
+nnoremap <C-g>j <Plug>(GitGutterNextHunk)
+nnoremap <C-g>k <Plug>(GitGutterPrevHunk)
+nnoremap <C-g>sh <Plug>(GitGutterStageHunk)
+nnoremap <C-g>uh <Plug>(GitGutterUndoHunk)
+nnoremap <C-g>ph <Plug>(GitGutterPreviewHunk)
 
 " Settings for 'APZelos/blamer.nvim':
 let g:blamer_enabled = 1
