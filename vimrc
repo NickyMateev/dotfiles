@@ -20,7 +20,7 @@ if has('nvim')
 endif
 
 " Programming language plugins 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-go coc-flutter coc-sh coc-snippets'}
 Plug 'fatih/vim-go'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
