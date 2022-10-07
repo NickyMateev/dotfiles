@@ -1,3 +1,4 @@
+
 set rtp+=/opt/homebrew/bin/fzf
 
 call plug#begin('~/.vim/plugged')
@@ -29,6 +30,7 @@ Plug 'wellle/context.vim'
 Plug 'vim-autoformat/vim-autoformat'
 
 " Appearance plugins
+Plug 'tomasiser/vim-code-dark'
 Plug 'miyakogi/conoline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -42,6 +44,13 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 
 call plug#end()
+
+" Enable syntax highlighting
+syntax on
+colorscheme codedark
+
+" Activates italicized comments (make sure your terminal supports italics)
+let g:codedark_italics=1
 
 set wildmenu " list command-line auto-completion suggestions
 set encoding=UTF-8
@@ -124,10 +133,6 @@ inoremap ( ()<Left>
 inoremap { {}<Left><CR><Esc><S-o>
 inoremap [ []<Left>
 inoremap " ""<Left>
-
-
-" Enable syntax highlighting
-syntax on
 
 " Search highlight color
 hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
