@@ -1,15 +1,5 @@
 {
 	"languageserver": {
-		"go": {
-			"command": "gopls",
-			"rootPatterns": [
-				"go.mod"
-			],
-			"trace.server": "verbose",
-			"filetypes": [
-				"go"
-			]
-		},
 		"efm": {
 			"command": "efm-langserver",
 			"args": [],
