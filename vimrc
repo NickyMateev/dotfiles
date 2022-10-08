@@ -262,7 +262,6 @@ nnoremap <C-g>hp <Plug>(GitGutterPreviewHunk)
 " Settings for 'APZelos/blamer.nvim':
 let g:blamer_enabled = 1
 let g:blamer_delay = 500
-hi! link Blamer Ignore
 
 " Finding files with fzf
 nnoremap <silent> <C-f> :Files<CR>
