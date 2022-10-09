@@ -234,6 +234,7 @@ let g:go_highlight_space_tab_error = 1
 let g:go_highlight_trailing_whitespace_error = 1
 
 let g:go_metalinter_autosave = 1
+let g:go_auto_sameids = 1
 let g:go_updatetime = 250
 hi def goSameId ctermbg=18 ctermfg=white
 
