@@ -121,6 +121,9 @@ nnoremap <C-w>l 10<C-w>>
 " Remap new vertical split shortcut
 noremap <C-w>v :vnew<CR>
 
+" TMUX-like window creation mappings
+noremap <C-w>% :vnew<CR>
+noremap <C-w>" :new<CR>
 
 " Put current line to center of screen after scrolling down
 nnoremap <C-d> <C-d>zz
