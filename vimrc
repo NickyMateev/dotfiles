@@ -216,6 +216,12 @@ nnoremap <silent> gr <Plug>(coc-references)
 " Symbol renaming
 nnoremap <leader>rn <Plug>(coc-rename)
 
+" Remap keys for applying codeAction to the current buffer.
+nnoremap <leader>ac  <Plug>(coc-codeaction)
+
+" Apply AutoFix to problem on the current line.
+nnoremap <leader>qf  <Plug>(coc-fix-current)
+
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
