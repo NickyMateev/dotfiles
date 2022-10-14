@@ -23,6 +23,7 @@ endif
 " Programming language plugins 
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-go coc-flutter coc-sh coc-snippets'}
 Plug 'fatih/vim-go'
+Plug 'jparise/vim-graphql'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 Plug 'SirVer/ultisnips'
