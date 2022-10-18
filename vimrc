@@ -276,6 +276,7 @@ nnoremap <C-g>u :Git push<CR>
 nnoremap <C-g>d :Git pull<CR>
 nnoremap <C-g>ft :Git fetch<CR>
 nnoremap <C-g>ff :Git diff<CR>
+nnoremap <C-g>c :Gvdiffsplit main:%<CR><C-w>r<CR>
 nnoremap <C-g>l :Git log<CR>
 nnoremap <C-g>b :GBranches<CR>
 nnoremap <C-g>w :.GBrowse<CR>
