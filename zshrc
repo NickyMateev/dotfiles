@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -176,6 +183,7 @@ tmux-init() {
 	tmux new-window -n '⚙️  test-infra' -t sap
 	tmux new-window -n '📝 LSS' -t sap
 	tmux new-window -n '📟 Cockpit' -t sap
+	tmux new-window -n '🎲 ORD Specification' -t sap
 
 	tmux send-keys -t "sap:🧭 compass" 'cd' Enter
 	tmux send-keys -t "sap:🧭 compass" 'cd $GITPATH/github.com/kyma-incubator/compass' Enter
@@ -183,6 +191,7 @@ tmux-init() {
 	tmux send-keys -t "sap:⚙️  test-infra" 'cd $GITPATH/github.com/kyma-project/test-infra' Enter
 	tmux send-keys -t "sap:📝 LSS" 'cd $GITPATH/github.tools.sap/cloudfoundry/product-cf-hcp' Enter
 	tmux send-keys -t "sap:📟 Cockpit" 'cd $GITPATH/github.wdf.sap.corp/NGJP/JPaaS/com.sap.core.account' Enter
+	tmux send-keys -t "sap:🎲 ORD Specification" 'cd $GITPATH/github.tools.sap/CentralEngineering/open-resource-discovery-specification' Enter
 
 	tmux rename-window -t labsi:0 '📲 mobile-app'
 	tmux new-window -n '🚪 api-gateway' -t labsi
@@ -270,3 +279,6 @@ if [ -f '/Users/i335693/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then .
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

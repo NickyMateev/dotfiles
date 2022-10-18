@@ -15,6 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
+Plug 'stsewd/fzf-checkout.vim'
 Plug 'rhysd/git-messenger.vim'
 if has('nvim')
   Plug 'APZelos/blamer.nvim'
@@ -276,6 +277,7 @@ nnoremap <C-g>d :Git pull<CR>
 nnoremap <C-g>f :Git fetch<CR>
 nnoremap <C-g>ff :Git diff<CR>
 nnoremap <C-g>l :Git log<CR>
+nnoremap <C-g>b :GBranches<CR>
 nnoremap <C-g>w :.GBrowse<CR>
 
 " Mappings for vim-gitgutter:
