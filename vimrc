@@ -269,7 +269,7 @@ let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 " Mappings for vim-fugitive:
-nnoremap <C-g>st :Git status<CR>
+nnoremap <C-g>s :Git status<CR>
 nnoremap <C-g>a :Git add -A<CR>
 nnoremap <C-g>m :Git commit<CR>
 nnoremap <C-g>u :Git push<CR>
