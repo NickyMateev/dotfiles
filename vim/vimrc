@@ -164,7 +164,7 @@ nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q<CR>
 
 " Easily open .vimrc
-noremap <leader><leader> :vsp $GITPATH/github.com/NickyMateev/dotfiles/vimrc<CR>
+noremap <leader><leader> :vsp $GITPATH/github.com/NickyMateev/dotfiles/vim/vimrc<CR>
 
 " Reload .vimrc
 noremap <leader>. :source ~/.vimrc<CR>
