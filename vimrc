@@ -151,6 +151,9 @@ hi DiffText   cterm=BOLD ctermfg=NONE ctermbg=23
 " Clear search highlight with Esc: https://tech.serhatteker.com/post/2020-03/clear-search-highlight-in-vim/#ps
 nnoremap <esc> :noh <CR>
 
+" Add grep operator: https://learnvimscriptthehardway.stevelosh.com/chapters/32.html
+nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
 " Popup window color schemes
 hi Pmenu ctermbg=black
 hi Pmenu ctermfg=white
