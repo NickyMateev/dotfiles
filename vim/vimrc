@@ -407,4 +407,6 @@ function! XTermPasteBegin()
 	return ""
 endfunction
 
-source %/scripts
+for f in split(glob('$GITPATH/github.com/NickyMateev/dotfiles/vim/scripts/*.vim'), '\n')
+    exe 'source' f
+endfor
