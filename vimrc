@@ -263,6 +263,9 @@ hi def goSameId ctermbg=18 ctermfg=white
 " Set vim-go snippet engine
 let g:go_snippet_engine = "ultisnips"
 
+" vim-go run tests with shortcut
+nnoremap gt :GoTest<CR>
+
 " Set ultisnips triggers
 let g:UltiSnipsExpandTrigger="<Enter>"                                            
 let g:UltiSnipsJumpForwardTrigger="<TAB>"                                       
