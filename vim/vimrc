@@ -10,6 +10,7 @@ Plug 'wsdjeg/vim-fetch'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 
 " Git plugins
 Plug 'tpope/vim-fugitive'
@@ -41,6 +42,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'rafi/awesome-vim-colorschemes'
 
 " Other plugins
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
