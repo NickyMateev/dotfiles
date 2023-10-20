@@ -141,6 +141,9 @@ inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap " ""<Left>
 
+" Yank text within double quotes
+nnoremap yyy vi"y
+
 " Search highlight color
 hi Search ctermfg=White ctermbg=136 guifg=Black guibg=Yellow
 
