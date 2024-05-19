@@ -4,7 +4,7 @@ local lsp = require('lsp-zero')
 
 mason.setup({})
 mason_lspconfig.setup({
-  ensure_installed = {'gopls', 'lua_ls'},
+  ensure_installed = {'gopls', 'lua_ls', 'bashls', 'pyright'},
 
   handlers = {
 	  function(server_name)
