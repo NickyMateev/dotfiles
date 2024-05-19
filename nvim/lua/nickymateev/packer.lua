@@ -55,4 +55,6 @@ return require('packer').startup(function(use)
     }
 
     use { 'TabbyML/vim-tabby' }
+    use { 'nvim-tree/nvim-tree.lua' }
+    use { 'nvim-tree/nvim-web-devicons' }
 end)
