@@ -62,3 +62,9 @@ vim.keymap.set('n', 'yyy', 'vi"y')
 vim.keymap.set('n', '<leader>yyy', 'vi"\"+y')
 
 vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
+
+-- Save current file with <leader>w instead of typing :w every time
+vim.keymap.set('n', '<leader>w', ':w!<CR>')
+
+-- Quit current file with <leader>q instead of typing :q every time
+vim.keymap.set('n', '<leader>q', ':q<CR>')
