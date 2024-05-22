@@ -16,10 +16,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
-
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
@@ -59,7 +55,6 @@ vim.keymap.set('i', '"', '""<Left>')
 
 -- Yank text within double quotes
 vim.keymap.set('n', 'yyy', 'vi"y')
-vim.keymap.set('n', '<leader>yyy', 'vi"\"+y')
 
 vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
