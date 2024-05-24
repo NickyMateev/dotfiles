@@ -1,3 +1,4 @@
+require("nickymateev.packer")
 require("nickymateev.remap")
 require("nickymateev.set")
 require("nickymateev.split")
