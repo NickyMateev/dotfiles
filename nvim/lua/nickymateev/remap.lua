@@ -63,3 +63,6 @@ vim.keymap.set('n', '<leader>w', ':w!<CR>')
 
 -- Quit current file with <leader>q instead of typing :q every time
 vim.keymap.set('n', '<leader>q', ':q<CR>')
+
+-- Map ,, to replay the previously used register
+vim.keymap.set('n', ',,', '@@')
