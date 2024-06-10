@@ -61,4 +61,5 @@ return require('packer').startup(function(use)
     use { 'airblade/vim-gitgutter' }
     use { 'vimwiki/vimwiki' }
     use { 'folke/zen-mode.nvim' }
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 end)
