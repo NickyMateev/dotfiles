@@ -55,6 +55,14 @@ return require('packer').startup(function(use)
 
     }
 
+    use {
+        'akinsho/flutter-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    }
+
     use { 'TabbyML/vim-tabby' }
     use { 'nvim-tree/nvim-tree.lua' }
     use { 'nvim-tree/nvim-web-devicons' }
@@ -62,4 +70,11 @@ return require('packer').startup(function(use)
     use { 'vimwiki/vimwiki' }
     use { 'folke/zen-mode.nvim' }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+    use { 'folke/noice.nvim',
+        requires = {
+            { 'MunifTanjim/nui.nvim' },
+            { 'rcarriga/nvim-notify' }
+        }
+    }
 end)
