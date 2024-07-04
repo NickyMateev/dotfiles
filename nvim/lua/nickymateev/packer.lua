@@ -69,4 +69,7 @@ return require('packer').startup(function(use)
             { 'rcarriga/nvim-notify' }
         }
     }
+
+    use { 'tpope/vim-dadbod' }
+    use { 'kristijanhusak/vim-dadbod-ui' }
 end)
