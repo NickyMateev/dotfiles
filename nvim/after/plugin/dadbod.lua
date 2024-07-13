@@ -1,5 +1,6 @@
 vim.g.db_ui_win_position = 'right';
 vim.g.db_ui_auto_execute_table_helpers = 1;
+vim.g.db_ui_force_echo_notifications = 1;
 
 vim.g.db_ui_icons = {
     expanded = {
