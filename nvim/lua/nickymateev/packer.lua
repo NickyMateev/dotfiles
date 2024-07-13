@@ -69,6 +69,7 @@ return require('packer').startup(function(use)
             { 'rcarriga/nvim-notify' }
         }
     }
+    use { 'folke/which-key.nvim' }
 
     use { 'tpope/vim-dadbod' }
     use { 'kristijanhusak/vim-dadbod-ui' }
