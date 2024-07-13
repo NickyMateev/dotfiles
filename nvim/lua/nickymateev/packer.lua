@@ -71,6 +71,17 @@ return require('packer').startup(function(use)
     }
     use { 'folke/which-key.nvim' }
 
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                -- config
+            }
+        end,
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+
     use { 'tpope/vim-dadbod' }
     use { 'kristijanhusak/vim-dadbod-ui' }
     use { 'kristijanhusak/vim-dadbod-completion' }
