@@ -87,4 +87,7 @@ return require('packer').startup(function(use)
     use { 'kristijanhusak/vim-dadbod-completion' }
 
     use { "David-Kunz/gen.nvim" }
+
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
+    use { "leoluz/nvim-dap-go" }
 end)
