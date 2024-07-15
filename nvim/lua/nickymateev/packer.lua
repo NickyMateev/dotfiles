@@ -64,6 +64,11 @@ return require('packer').startup(function(use)
     use { 'folke/zen-mode.nvim' }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
     use { 'folke/noice.nvim',
         requires = {
             { 'MunifTanjim/nui.nvim' },
