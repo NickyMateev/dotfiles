@@ -61,3 +61,10 @@ vim.keymap.set('n', '<leader>dr', ":lua require'dap'.repl.open({}, 'vsplit')<CR>
 vim.keymap.set('n', '<leader>de', ":lua require'dap'.set_exception_breakpoints({\"all\"})<CR>")
 
 vim.keymap.set('n', '<leader>di', ":lua require'dap.ui.widgets'.hover()<CR>")
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "dap-float",
+    callback = function()
+        vim.keymap.set({ "n", "v" }, "q", "<cmd>close!<CR>")
+    end,
+})
