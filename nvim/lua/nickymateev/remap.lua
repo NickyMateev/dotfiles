@@ -54,7 +54,7 @@ vim.keymap.set('i', '"', '""<Left>')
 -- Yank text within double quotes
 vim.keymap.set('n', 'yyy', 'vi"y')
 
-vim.keymap.set('n', '<leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
+vim.keymap.set('n', '<leader>r', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
 -- Save current file with <leader>w instead of typing :w every time
 vim.keymap.set('n', '<leader>w', ':w!<CR>')

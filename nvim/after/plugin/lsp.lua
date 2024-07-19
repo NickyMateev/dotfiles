@@ -53,6 +53,7 @@ lsp.on_attach(function(client, bufnr)
     -- Custom bindings
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', { buffer = bufnr })
+    vim.keymap.set('n', '<leader>s', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', { buffer = bufnr })
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
     vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
