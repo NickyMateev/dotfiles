@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
     use('RRethy/vim-illuminate')
-    use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
@@ -91,8 +90,6 @@ return require('packer').startup(function(use)
         end,
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-
-    use { "David-Kunz/gen.nvim" }
 
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
     use { "leoluz/nvim-dap-go" }
