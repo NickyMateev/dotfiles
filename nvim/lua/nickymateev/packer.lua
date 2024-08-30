@@ -92,10 +92,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
-    use { 'tpope/vim-dadbod' }
-    use { 'kristijanhusak/vim-dadbod-ui' }
-    use { 'kristijanhusak/vim-dadbod-completion' }
-
     use { "David-Kunz/gen.nvim" }
 
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
